@@ -45,7 +45,7 @@ if st.button('Recommend Me Movies'):
         with val:
             st.image(link, caption=title, width=150)
 
-    st.write('Dataset Detail')
-    st.dataframe(st.session_state['data'].loc[rec_idx][['Series_Title', 'Genre', 'IMDB_Rating', 'Director','metadata-prep-lemm']])
+    #st.write('Dataset Detail')
+    #st.dataframe(st.session_state['data'].loc[rec_idx][['Series_Title', 'Genre', 'IMDB_Rating', 'Director','metadata-prep-lemm']])
 else:
     st.write('Waiting')
