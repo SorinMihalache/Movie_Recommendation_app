@@ -16,12 +16,12 @@ if 'model' not in st.session_state or 'data' not in st.session_state or 'matrix'
     st.session_state['data'] = df
 
 
-st.title(':tv: Recommendation System')
+st.title(':books: Recommendation System')
 search, image = st.columns([3,1], gap='large')
 
 with search:
     movies = st.selectbox(
-        'Pick movies you\'ve watched',
+        'Pick book(s) you\'ve read',
         st.session_state['data']['Series_Title'].tolist()
     )
 with image:
@@ -29,7 +29,7 @@ with image:
     title_text = movies
     st.image(image_link, width=70)
 
-if st.button('Recommend Me Movies'):
+if st.button('Recommend Me Books'):
     st.subheader('Movies you will probably like :heart:')
     idx = st.session_state['data'][st.session_state['data']['Series_Title'] == movies].index[0]
     content = st.session_state['data'].loc[idx, 'metadata-prep-lemm']
