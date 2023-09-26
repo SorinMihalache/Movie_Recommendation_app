@@ -30,7 +30,7 @@ with image:
     st.image(image_link, width=70)
 
 if st.button('Recommend Me Books'):
-    st.subheader('Top 10 books taht you will probably like :heart:')
+    st.subheader('Top 10 books that you will probably like :heart:')
     idx = st.session_state['data'][st.session_state['data']['Series_Title'] == movies].index[0]
     content = st.session_state['data'].loc[idx, 'metadata-prep-lemm']
     watched = st.session_state['model'].transform([content])
